@@ -12,9 +12,14 @@ export const useUpdateBalance = () => {
 
     onMutate: async ({ id, newBalance }) => {
       await queryClient.cancelQueries({ queryKey: ['accounts'] });
+      await queryClient.cancelQueries({ queryKey: ['accounts', id] });
 
       const previousAccounts = queryClient.getQueryData<Account[]>([
         'accounts',
+      ]);
+      const previousAccount = queryClient.getQueryData<Account>([
+        'accounts',
+        id,
       ]);
 
       queryClient.setQueryData<Account[]>(['accounts'], (old) =>
@@ -25,17 +30,33 @@ export const useUpdateBalance = () => {
           : []
       );
 
-      return { previousAccounts };
+      if (previousAccount) {
+        queryClient.setQueryData<Account>(['accounts', id], {
+          ...previousAccount,
+          balance: newBalance,
+        });
+      }
+
+      return { previousAccounts, previousAccount };
     },
 
-    onError: (_error, _variables, context) => {
+    onError: (_error, variables, context) => {
       if (context?.previousAccounts) {
         queryClient.setQueryData(['accounts'], context.previousAccounts);
       }
+      if (context?.previousAccount && variables?.id) {
+        queryClient.setQueryData(
+          ['accounts', variables.id],
+          context.previousAccount
+        );
+      }
     },
 
-    onSettled: () => {
+    onSettled: (_data, _error, variables) => {
       queryClient.invalidateQueries({ queryKey: ['accounts'] });
+      if (variables?.id) {
+        queryClient.invalidateQueries({ queryKey: ['accounts', variables.id] });
+      }
     },
   });
 };
