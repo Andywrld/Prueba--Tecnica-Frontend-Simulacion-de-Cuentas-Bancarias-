@@ -56,4 +56,5 @@ Por defecto, Vite abrirá la aplicación en `http://localhost:5173/`. Si no se a
 - [Documentación de Vite](https://vitejs.dev/)
 - [Documentación de React](https://react.dev/)
 - [Documentación de TypeScript](https://www.typescriptlang.org/)
+- [Url de la aplicación](https://prueba-tecnica-frontend-simulacion.vercel.app/)
 
