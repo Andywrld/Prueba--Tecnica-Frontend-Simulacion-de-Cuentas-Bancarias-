@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { Layout } from '@layout/MainLayout';
-import { Home } from '@/features/home/page';
+import { Home } from '@/features/home/page/HomePage';
 import { DashboardLayout } from '@/layout/dashboard/LayoutDashboard';
-import { Dashboard } from '@/features/dashboard';
+import { Dashboard } from '@/features/dashboard/DashboardPage';
 import { RequireAuth } from './RouterGuard';
 import { LoginPage } from '@/features/auth/pages/LoginPages';
 
