@@ -17,4 +17,9 @@ export default defineConfig({
       '@store': path.resolve(__dirname, 'src/store'),
     },
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'esbuild',
+  },
 });
