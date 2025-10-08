@@ -1,4 +1,4 @@
-import { Accounts } from '@/features/accounts/page';
+import { Accounts } from '@/features/accounts/page/AccountPage';
 import { TotalBalance } from '../components/TotalBalance';
 
 export const Home = () => {
