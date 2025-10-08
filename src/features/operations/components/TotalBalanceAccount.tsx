@@ -3,8 +3,6 @@ import { Card } from '@/components/molecules/card';
 import { useAccountsQueryById } from '@/features/accounts/hook/useAccountQueryById';
 import { TrendingUp } from 'lucide-react';
 import { useParams } from 'react-router-dom';
-;
-
 export const TotalBalanceAccount = () => {
   const { id } = useParams();
 
@@ -21,7 +19,7 @@ export const TotalBalanceAccount = () => {
           <p className='text-sm text-foreground mb-1'>Saldo Disponible</p>
           <div className='flex items-center gap-3'>
             <h2 className='text-4xl font-bold text-foreground text-balance'>
-              ${data?.balance}
+              ${data?.balance || 0}
             </h2>
             <Button
               variant='ghost'
