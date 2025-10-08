@@ -1,8 +1,8 @@
 @import 'tailwindcss';
+@import '@/assets/font/fonts.css';
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-family: 'Geist', sans-serif;
 
   /* Colores base */
   --color-background: #ffffff;
@@ -37,8 +37,6 @@
   --color-chart-3: #6366f1;
   --color-chart-4: #f59e0b;
   --color-chart-5: #ef4444;
-
-
 
   /* 🧩 Radios */
   --radius: 0.625rem;
@@ -138,11 +136,9 @@
   animation-fill-mode: backwards;
 }
 
-
 .transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .glass {
   background: rgba(255, 255, 255, 0.05);
