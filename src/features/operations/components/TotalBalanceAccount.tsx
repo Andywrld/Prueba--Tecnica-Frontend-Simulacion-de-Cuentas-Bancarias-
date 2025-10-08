@@ -37,10 +37,10 @@ export const TotalBalanceAccount = () => {
             <TrendingUp className='w-6 h-6' />
           </div>
         </div>
-        <div className='text-right'>
-          <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2'>
-            <TrendingUp className='w-4 h-4' />
-            Activa
+        <div className='text-right flex-shrink-0 flex items-start justify-end w-auto max-w-full'>
+          <div className='inline-flex flex-wrap items-center justify-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 whitespace-nowrap'>
+            <TrendingUp className='w-4 h-4 shrink-0' />
+            <span className='truncate'>Activa</span>
           </div>
         </div>
       </div>

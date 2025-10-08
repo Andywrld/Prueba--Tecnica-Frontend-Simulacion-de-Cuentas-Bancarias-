@@ -20,7 +20,6 @@ export const RenderOperationDetail = ({
           )}`}
         >
           <div className='flex items-center justify-between px-6 py-4'>
-            {/* Izquierda: Icono + descripción */}
             <div className='flex items-center gap-4 flex-1 min-w-0'>
               <div
                 className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${
