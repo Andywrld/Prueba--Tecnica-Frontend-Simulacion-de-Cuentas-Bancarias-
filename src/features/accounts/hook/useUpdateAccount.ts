@@ -1,4 +1,4 @@
-// src/features/accounts/hook/useUpdateBalance.ts
+
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { UpdateBalanceAccount } from '../service/UpdateAccount';
 import type { Account } from '../types/account.type';
