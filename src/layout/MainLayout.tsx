@@ -10,7 +10,7 @@ export const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>aqui va el footer</footer>
+      <footer />
     </div>
   );
 };
